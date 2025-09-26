@@ -1,3 +1,4 @@
+"use client";
 import { Box, Button, Container, IconButton, Stack, Tooltip } from "@mui/material";
 import TokenInput from "@/components/TokenInput";
 import { useState } from "react";

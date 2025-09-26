@@ -8,7 +8,6 @@ import "@fontsource/asimovian";
 import "@fontsource/ibm-plex-sans";
 import "@fontsource-variable/open-sans";
 import "./globals.css";
-import { Box } from "@mui/material";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,10 +36,8 @@ export default function RootLayout({
       >
         <ThemeProvider theme={darkTheme}>
           <Web3Provider>
-            <Box sx={{ pt: 2, pl: 2, pr: 2 }}>
-              <Header />
-              {children}
-            </Box>
+            <Header />
+            {children}
           </Web3Provider>
         </ThemeProvider>
       </body>
