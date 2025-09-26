@@ -8,7 +8,7 @@ import "@fontsource/asimovian";
 import "@fontsource/ibm-plex-sans";
 import "@fontsource-variable/open-sans";
 import "./globals.css";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 
 const inter = Inter({
   subsets: ["latin"],
