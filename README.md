@@ -1,4 +1,8 @@
-# Next.js Template
+# Juni Frontend
+
+Frontend For Uniswap V4 Hook With FHE Based Encrypted Orders To Protect LPs & Traders.
+
+Forked from https://github.com/Inco-fhevm/nextjs-template
 
 This template provides a Nextjs implementation of @inco/js sdk for encryption and re-encryption.
 
