@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+// import { Inter, JetBrains_Mono } from "next/font/google";
 import { Web3Provider } from "@/provider/web3-provider";
 import { ThemeProvider } from "@mui/material/styles";
 import { darkTheme } from "@/utils/theme";
@@ -9,15 +9,15 @@ import "@fontsource/ibm-plex-sans";
 import "@fontsource-variable/open-sans";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+// const inter = Inter({
+//   subsets: ["latin"],
+//   variable: "--font-inter",
+// });
 
-const jetBrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-});
+// const jetBrainsMono = JetBrains_Mono({
+//   subsets: ["latin"],
+//   variable: "--font-jetbrains-mono",
+// });
 
 export const metadata: Metadata = {
   title: "Juni",
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${jetBrainsMono.variable} antialiased selection:bg-white/70 selection:text-black`}
+        className={` antialiased selection:bg-white/70 selection:text-black`}
       >
         <ThemeProvider theme={darkTheme}>
           <Web3Provider>
