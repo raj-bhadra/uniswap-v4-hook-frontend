@@ -14,8 +14,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Inco Nextjs Template",
-  description: "Inco Nextjs Template",
+  title: "Juni",
+  description: "Uniswap V4 Hook With FHE Based Encrypted Orders To Protect LPs & Traders",
 };
 
 export default function RootLayout({
