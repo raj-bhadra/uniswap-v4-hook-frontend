@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
 import { Web3Provider } from "@/provider/web3-provider";
+import { ThemeProvider } from "@mui/material/styles";
+import { darkTheme } from "@/utils/theme";
+import Header from "@/components/Header";
 import "@fontsource/asimovian";
 import "@fontsource/ibm-plex-sans";
 import "@fontsource-variable/open-sans";
-import { ThemeProvider } from "@mui/material/styles";
-import { darkTheme } from "@/utils/theme";
+import "./globals.css";
+import { Box, Container } from "@mui/material";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +37,10 @@ export default function RootLayout({
       >
         <ThemeProvider theme={darkTheme}>
           <Web3Provider>
-            {children}
+            <Box sx={{ pt: 2, pl: 2, pr: 2 }}>
+              <Header />
+              {children}
+            </Box>
           </Web3Provider>
         </ThemeProvider>
       </body>

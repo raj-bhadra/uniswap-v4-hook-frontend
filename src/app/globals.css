@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.main-text {
+  font-family: 'Asimovian', sans-serif;
+}
