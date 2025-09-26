@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Web3Provider } from "@/provider/web3-provider";
+import "@fontsource/asimovian";
+import "@fontsource/ibm-plex-sans";
+import "@fontsource-variable/open-sans";
+import { ThemeProvider } from "@mui/material/styles";
+import { darkTheme } from "@/utils/theme";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,9 +33,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetBrainsMono.variable} antialiased selection:bg-white/70 selection:text-black`}
       >
-        <Web3Provider>
-          {children}
-        </Web3Provider>
+        <ThemeProvider theme={darkTheme}>
+          <Web3Provider>
+            {children}
+          </Web3Provider>
+        </ThemeProvider>
       </body>
     </html>
   );
