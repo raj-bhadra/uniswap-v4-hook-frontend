@@ -9,7 +9,7 @@ interface TokenInputProps {
     setValue?: (value: number) => void;
     tokenImage: string;
     tokenBalance: bigint;
-    setTokenBalance?: (balance: bigint) => void;
+    setTokenBalance: (balance: bigint) => void;
 }
 
 export default function TokenInput({ tokenName, input, value, setValue, tokenImage, tokenBalance, setTokenBalance }: TokenInputProps) {
@@ -26,7 +26,7 @@ export default function TokenInput({ tokenName, input, value, setValue, tokenIma
                                         <Image src={tokenImage} alt={tokenName} width={24} height={24} />
                                         <Typography variant="h6" sx={{ fontWeight: 600 }}>{tokenName}</Typography>
                                     </Stack>
-                                    <TokenBalance tokenName={tokenName} tokenBalance={tokenBalance} />
+                                    <TokenBalance tokenName={tokenName} tokenBalance={tokenBalance} setTokenBalance={setTokenBalance} />
                                 </Stack>
                             </InputAdornment>,
                             startAdornment: <InputAdornment position="start">

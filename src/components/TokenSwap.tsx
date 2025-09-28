@@ -29,7 +29,7 @@ export default function TokenSwap() {
     return (
         <Container maxWidth="xs">
             <Stack direction="column" spacing={0}>
-                <TokenInput tokenName={tokenInputName} input={true} value={amountIn} setValue={setAmountIn} tokenImage={tokenInputImage} tokenBalance={token0Balance} />
+                <TokenInput tokenName={tokenInputName} input={true} value={amountIn} setValue={setAmountIn} tokenImage={tokenInputImage} tokenBalance={isToken0Input ? token0Balance : token1Balance} setTokenBalance={isToken0Input ? setToken0Balance : setToken1Balance} />
                 <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <IconButton onClick={switchTokens} sx={{ width: "32px", height: "32px" }}>
                         <Tooltip title={"Switch Input Token"} placement="top">
@@ -37,7 +37,7 @@ export default function TokenSwap() {
                         </Tooltip>
                     </IconButton>
                 </Box>
-                <TokenInput tokenName={tokenOutputName} input={false} value={amountOut} tokenImage={tokenOutputImage} tokenBalance={token1Balance} />
+                <TokenInput tokenName={tokenOutputName} input={false} value={amountOut} tokenImage={tokenOutputImage} tokenBalance={isToken0Input ? token1Balance : token0Balance} setTokenBalance={isToken0Input ? setToken1Balance : setToken0Balance} />
                 <Button variant="contained" color="primary" disabled={!swapEnabled} sx={{ mt: 2 }} onClick={() => setOpen(true)}>Swap</Button>
                 <SwapDialog open={open} onClose={closeSwapDialog} token0Name={token0Name} token1Name={token1Name} amountIn={amountIn} isToken0Input={isToken0Input} />
             </Stack>
