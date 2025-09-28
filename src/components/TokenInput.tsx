@@ -26,7 +26,7 @@ export default function TokenInput({ tokenName, input, value, setValue, tokenIma
                                         <Image src={tokenImage} alt={tokenName} width={24} height={24} />
                                         <Typography variant="h6" sx={{ fontWeight: 600 }}>{tokenName}</Typography>
                                     </Stack>
-                                    <TokenBalance tokenName={tokenName} tokenBalance={tokenBalance} setTokenBalance={setTokenBalance} />
+                                    <TokenBalance tokenName={tokenName} tokenBalance={tokenBalance} />
                                 </Stack>
                             </InputAdornment>,
                             startAdornment: <InputAdornment position="start">

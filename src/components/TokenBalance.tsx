@@ -11,11 +11,11 @@ import { token0Name } from "@/utils/tokenInfo";
 interface TokenBalanceProps {
     tokenName: string,
     tokenBalance: bigint,
-    setTokenBalance: (input: number) => {}
 }
 
 // show balance and show a refresh icon button on the right side of the balance
-export default function TokenBalance({ tokenName, tokenBalance, setTokenBalance }: TokenBalanceProps) {
+export default function TokenBalance({ tokenName, tokenBalance }: TokenBalanceProps) {
+    const [balance, setTokenBalance] = useState(tokenBalance);
     const [isEncryptedLoading, setIsEncryptedLoading] = useState(false);
     const [isMinting, setIsMinting] = useState(false);
     const [error, setError] = useState("");
@@ -71,7 +71,7 @@ export default function TokenBalance({ tokenName, tokenBalance, setTokenBalance 
                 handle: balanceHandle?.toString() as string,
             });
             const formattedDecrypted = formatEther(decrypted as bigint);
-            setTokenBalance(Number(formattedDecrypted));
+            setTokenBalance(formattedDecrypted as unknown as bigint);
         } catch (err) {
             console.error("Error refreshing balance:", err);
             setError("Failed to refresh balance");
@@ -175,7 +175,7 @@ export default function TokenBalance({ tokenName, tokenBalance, setTokenBalance 
 
     return (
         <Stack direction="row" spacing={0} alignItems="center" justifyContent="flex-end">
-            <Typography variant="body2">{formatEther(tokenBalance)} {tokenName}</Typography>
+            <Typography variant="body2">{formatEther(balance)} {tokenName}</Typography>
             <Box>
                 <Tooltip title="Refresh Balance">
                     <IconButton size="small" onClick={refreshBalance} disabled={isEncryptedLoading}>
